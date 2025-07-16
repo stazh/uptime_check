@@ -1,43 +1,26 @@
 # Uptime Monitor
 
-Diese App überwacht die Verfügbarkeit der Webseite https://www.zentraleserien-hybridesuche.zh.ch und erstellt automatisch einen Status-Report.
+Dieses Projekt prüft regelmäßig die Erreichbarkeit der Seite
+<https://www.zentraleserien-hybridesuche.zh.ch> und stellt die Ergebnisse
+über GitHub Pages bereit. Die ursprüngliche Node.js-Variante wurde
+entfernt, sodass nur noch das Python-Skript `src/monitor.py` zum Einsatz
+kommt.
 
 ## Funktionsweise
 
-- **Automatische Überprüfung**: GitHub Actions führt alle 15 Minuten eine Überprüfung durch
-- **Status-Tracking**: Speichert Ergebnisse in `status.json`
-- **Historische Daten**: Alle Überprüfungen werden in `history.json` gespeichert
-- **Automatische Commits**: Änderungen werden automatisch in das Repository committed
+* Alle 15 Minuten startet ein GitHub&nbsp;Actions&nbsp;Workflow das
+  Python‑Skript `src/monitor.py`.
+* Der aktuelle Status wird in `status.json` gespeichert und zusätzlich in
+  `history.json` archiviert.
+* Änderungen an diesen Dateien werden automatisch committet. Dadurch
+  löst jeder Lauf eine Aktualisierung der GitHub&nbsp;Pages‑Seite aus.
 
-## Dateien
-
-- `src/monitor.py` - Hauptscript für die Überwachung (Python)
-- `requirements.txt` - Python-Abhängigkeiten
-- `status.json` - Aktueller Status der Webseite
-- `history.json` - Historische Daten aller Überprüfungen
-- `.github/workflows/monitor.yml` - GitHub Actions Workflow
-
-## Lokale Ausführung
+## Lokaler Test
 
 ```bash
-# Abhängigkeiten installieren
 pip install -r requirements.txt
-
-# Uptime-Check ausführen
 python3 src/monitor.py
 ```
 
-## Status
-
-Der aktuelle Status wird automatisch in der `status.json` Datei aktualisiert.
-
-## Verlauf
-
-Alle Überprüfungen werden mit Zeitstempel in der `history.json` Datei gespeichert.
-
-## Setup
-
-1. Repository zu GitHub pushen
-2. GitHub Actions wird automatisch aktiviert
-3. Der Workflow läuft alle 15 Minuten und überprüft die Webseite
-4. Ergebnisse werden automatisch committed
+Die Ergebnisse finden sich anschließend in `status.json` und
+`history.json`.
