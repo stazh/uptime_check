@@ -2,9 +2,7 @@
 
 Dieses Projekt prüft regelmäßig die Erreichbarkeit der Seite
 <https://www.zentraleserien-hybridesuche.zh.ch> und stellt die Ergebnisse
-über GitHub Pages bereit. Die ursprüngliche Node.js-Variante wurde
-entfernt, sodass nur noch das Python-Skript `src/monitor.py` zum Einsatz
-kommt.
+über GitHub Pages bereit.
 
 ## Funktionsweise
 
