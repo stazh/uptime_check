@@ -22,5 +22,5 @@ pip install -r requirements.txt
 python3 src/monitor.py
 ```
 
-Die Ergebnisse finden sich anschließend in `status.json` und
+Die Ergebnisse finden sich anschliessend in `status.json` und
 `history.json`.
