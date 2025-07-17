@@ -1,6 +1,6 @@
 # Uptime Monitor
 
-Dieses Projekt prüft regelmässig die Erreichbarkeit der Seite
+Das Projekt prüft regelmässig die Erreichbarkeit der Seite
 <https://www.zentraleserien-hybridesuche.zh.ch> und stellt die Ergebnisse
 über GitHub Pages bereit.
 
