@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   monitor:
@@ -29,6 +30,8 @@ jobs:
       
     - name: Run uptime check
       run: python3 src/monitor.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
     - name: Commit and push changes
       run: |
