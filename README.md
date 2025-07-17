@@ -8,7 +8,7 @@ kommt.
 
 ## Funktionsweise
 
-* Alle 15 Minuten startet ein GitHub&nbsp;Actions&nbsp;Workflow das
+* Alle 2 Stunden startet ein GitHub&nbsp;Actions&nbsp;Workflow das
   Python‑Skript `src/monitor.py`.
 * Der aktuelle Status wird in `status.json` gespeichert und zusätzlich in
   `history.json` archiviert.
