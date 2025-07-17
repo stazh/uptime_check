@@ -4,6 +4,7 @@ import requests
 import json
 import os
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 import time
 from github_issues import create_github_issue
 
@@ -18,7 +19,7 @@ def check_website():
         start_time = time.time()
         status = {
             'url': URL_TO_CHECK,
-            'timestamp': datetime.now(timezone.utc).isoformat(),
+            'timestamp': datetime.now(ZoneInfo("Europe/Zurich")).isoformat(),
             'status': 'unknown',
             'responseTime': 0,
             'statusCode': 0,
@@ -61,7 +62,7 @@ def check_website():
             token = os.environ.get('GITHUB_TOKEN')
             if token:
                 title = f"Website DOWN: {URL_TO_CHECK}"
-                body = f"Automatic alert: The website {URL_TO_CHECK} is down as of {status['timestamp']}.\n\nError: {status['error']}\nStatus code: {status['statusCode']}"
+                body = f"Automatic alert: The website {URL_TO_CHECK} is down as of {status['']}.\n\nError: {status['error']}\nStatus code: {status['statusCode']}"
                 create_github_issue(repo, title, body, token)
             else:
                 print("⚠️ No GITHUB_TOKEN found in environment. Cannot create GitHub issue.")
