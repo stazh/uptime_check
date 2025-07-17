@@ -4,7 +4,6 @@ import requests
 import json
 import os
 from datetime import datetime, timezone
-from zoneinfo import ZoneInfo
 import time
 from github_issues import create_github_issue
 
@@ -19,7 +18,7 @@ def check_website():
         start_time = time.time()
         status = {
             'url': URL_TO_CHECK,
-            'timestamp': datetime.now(ZoneInfo("Europe/Zurich")).isoformat(),
+            'timestamp': datetime.now(timezone.utc).isoformat(),
             'status': 'unknown',
             'responseTime': 0,
             'statusCode': 0,
