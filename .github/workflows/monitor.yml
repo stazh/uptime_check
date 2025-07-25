@@ -2,7 +2,7 @@ name: Website Uptime Monitor
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0 */5 * * *'
   push:
     branches: [ main ]
   workflow_dispatch:
