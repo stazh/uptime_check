@@ -6,6 +6,7 @@ import os
 from datetime import datetime, timezone
 import time
 from github_issues import create_github_issue
+from datetime import timedelta
 
 URL_TO_CHECK = 'https://www.zentraleserien-hybridesuche.zh.ch'
 STATUS_FILE = os.path.join(os.path.dirname(__file__), '..', 'status.json')
@@ -61,7 +62,8 @@ def check_website():
             token = os.environ.get('GITHUB_TOKEN')
             if token:
                 title = f"Website DOWN: {URL_TO_CHECK}"
-                body = f"Automatic alert: The website {URL_TO_CHECK} is down as of {status['timestamp']}.\n\nError: {status['error']}\nStatus code: {status['statusCode']}"
+                timeadjustment = (datetime.fromisoformat(status['timestamp']) + timedelta(hours=2)).isoformat()
+                body = f"Automatic alert: The website {URL_TO_CHECK} is down as of {timeadjustment}.\n\nError: {status['error']}\nStatus code: {status['statusCode']}"
 
                 create_github_issue(repo, title, body, token)
             else:
