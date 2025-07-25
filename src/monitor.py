@@ -61,7 +61,8 @@ def check_website():
             token = os.environ.get('GITHUB_TOKEN')
             if token:
                 title = f"Website DOWN: {URL_TO_CHECK}"
-                body = f"Automatic alert: The website {URL_TO_CHECK} is down as of {status['']}.\n\nError: {status['error']}\nStatus code: {status['statusCode']}"
+                body = f"Automatic alert: The website {URL_TO_CHECK} is down as of {status['timestamp']}.\n\nError: {status['error']}\nStatus code: {status['statusCode']}"
+
                 create_github_issue(repo, title, body, token)
             else:
                 print("⚠️ No GITHUB_TOKEN found in environment. Cannot create GitHub issue.")
