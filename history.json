@@ -10580,5 +10580,18 @@
       "totalChecks": 813,
       "onlineChecks": 799
     }
+  },
+  {
+    "url": "https://www.zentraleserien-hybridesuche.zh.ch",
+    "timestamp": "2025-09-19T02:54:44.011974+00:00",
+    "status": "online",
+    "responseTime": 713,
+    "statusCode": 200,
+    "error": null,
+    "uptime": {
+      "uptime": "98.28",
+      "totalChecks": 814,
+      "onlineChecks": 800
+    }
   }
 ]
