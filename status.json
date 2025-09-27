@@ -1,13 +1,13 @@
 {
   "url": "https://www.zentraleserien-hybridesuche.zh.ch",
-  "timestamp": "2025-09-27T08:10:31.358499+00:00",
+  "timestamp": "2025-09-27T10:08:33.709382+00:00",
   "status": "online",
-  "responseTime": 754,
+  "responseTime": 850,
   "statusCode": 200,
   "error": null,
   "uptime": {
     "uptime": "98.47",
-    "totalChecks": 913,
-    "onlineChecks": 899
+    "totalChecks": 914,
+    "onlineChecks": 900
   }
 }
