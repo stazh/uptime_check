@@ -1,18 +1,5 @@
 [
   {
-    "url": "https://zentraleserien-hybridesuche.zh.ch",
-    "timestamp": "2025-07-16T14:19:25.775222+00:00",
-    "status": "offline",
-    "responseTime": 15,
-    "statusCode": 0,
-    "error": "HTTPSConnectionPool(host='zentraleserien-hybridesuche.zh.ch', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x105083f20>: Failed to resolve 'zentraleserien-hybridesuche.zh.ch' ([Errno 8] nodename nor servname provided, or not known)\"))",
-    "uptime": {
-      "uptime": "0.00",
-      "totalChecks": 0,
-      "onlineChecks": 0
-    }
-  },
-  {
     "url": "https://www.zentraleserien-hybridesuche.zh.ch",
     "timestamp": "2025-07-16T14:21:48.119496+00:00",
     "status": "online",
@@ -12997,6 +12984,19 @@
       "uptime": "98.60",
       "totalChecks": 999,
       "onlineChecks": 985
+    }
+  },
+  {
+    "url": "https://www.zentraleserien-hybridesuche.zh.ch",
+    "timestamp": "2025-10-04T14:07:12.911318+00:00",
+    "status": "online",
+    "responseTime": 640,
+    "statusCode": 200,
+    "error": null,
+    "uptime": {
+      "uptime": "98.60",
+      "totalChecks": 1000,
+      "onlineChecks": 986
     }
   }
 ]
