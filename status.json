@@ -1,13 +1,13 @@
 {
   "url": "https://www.zentraleserien-hybridesuche.zh.ch",
-  "timestamp": "2025-12-24T10:11:57.821722+00:00",
-  "status": "offline",
-  "responseTime": 30747,
-  "statusCode": 0,
-  "error": "HTTPSConnectionPool(host='www.zentraleserien-hybridesuche.zh.ch', port=443): Read timed out. (read timeout=30)",
+  "timestamp": "2025-12-24T12:19:25.447494+00:00",
+  "status": "online",
+  "responseTime": 873,
+  "statusCode": 200,
+  "error": null,
   "uptime": {
-    "uptime": "99.50",
+    "uptime": "99.40",
     "totalChecks": 1000,
-    "onlineChecks": 995
+    "onlineChecks": 994
   }
 }
