@@ -1,19 +1,6 @@
 [
   {
     "url": "https://www.zentraleserien-hybridesuche.zh.ch",
-    "timestamp": "2025-10-04T08:10:31.742302+00:00",
-    "status": "online",
-    "responseTime": 816,
-    "statusCode": 200,
-    "error": null,
-    "uptime": {
-      "uptime": "98.60",
-      "totalChecks": 997,
-      "onlineChecks": 983
-    }
-  },
-  {
-    "url": "https://www.zentraleserien-hybridesuche.zh.ch",
     "timestamp": "2025-10-04T10:08:35.575254+00:00",
     "status": "online",
     "responseTime": 612,
@@ -12991,6 +12978,19 @@
     "timestamp": "2025-12-26T14:10:24.304246+00:00",
     "status": "online",
     "responseTime": 1061,
+    "statusCode": 200,
+    "error": null,
+    "uptime": {
+      "uptime": "99.40",
+      "totalChecks": 1000,
+      "onlineChecks": 994
+    }
+  },
+  {
+    "url": "https://www.zentraleserien-hybridesuche.zh.ch",
+    "timestamp": "2025-12-26T16:11:34.802222+00:00",
+    "status": "online",
+    "responseTime": 666,
     "statusCode": 200,
     "error": null,
     "uptime": {
