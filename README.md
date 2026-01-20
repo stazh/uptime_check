@@ -1,8 +1,9 @@
 # Uptime Check
 
-Dieses Projekt prüft regelmässig die Erreichbarkeit der Seite
-<https://www.zentraleserien-hybridesuche.zh.ch> und stellt die Ergebnisse
-über GitHub Pages bereit.
+Dieses Projekt prüft regelmässig die Erreichbarkeit der Seiten
+<https://www.zentraleserien-hybridesuche.zh.ch> und
+<https://www.zentraleserien.zh.ch/documents/abl/ABl_1966__S__568-589_?norm=on>
+und stellt die Ergebnisse über GitHub Pages bereit.
 
 ## Funktionsweise
 

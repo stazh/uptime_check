@@ -86,32 +86,7 @@
     <div class="container">
         <h1>🚀 Uptime Monitor</h1>
         
-        <div id="status-card" class="status-card">
-            <h3>
-                <span id="status-indicator" class="status-indicator"></span>
-                <span id="status-text">Laden...</span>
-            </h3>
-            <p><strong>URL:</strong> <a id="website-url" class="url" href="#" target="_blank">-</a></p>
-            <p><strong>Status Code:</strong> <span id="status-code">-</span></p>
-            <p><strong>Antwortzeit:</strong> <span id="response-time">-</span> ms</p>
-            <p><strong>Letzte Überprüfung:</strong> <span id="last-check">-</span></p>
-            <div id="error-message" style="display: none; color: #dc3545; margin-top: 10px;"></div>
-        </div>
-
-        <div class="metrics">
-            <div class="metric">
-                <div id="uptime-percentage" class="metric-value">-</div>
-                <div class="metric-label">Verfügbarkeit</div>
-            </div>
-            <div class="metric">
-                <div id="total-checks" class="metric-value">-</div>
-                <div class="metric-label">Gesamte Überprüfungen</div>
-            </div>
-            <div class="metric">
-                <div id="online-checks" class="metric-value">-</div>
-                <div class="metric-label">Online Überprüfungen</div>
-            </div>
-        </div>
+        <div id="status-container"></div>
 
         <div class="last-updated">
             Automatisch aktualisiert alle 2 Stunden via GitHub Actions
@@ -119,53 +94,58 @@
     </div>
 
     <script>
+        function renderStatusCard(status) {
+            const isOnline = status.status === 'online';
+            const indicatorClass = isOnline ? 'status-indicator' : 'status-indicator offline';
+            const cardClass = isOnline ? 'status-card' : 'status-card offline';
+            const statusText = isOnline ? 'Website ist online' : 'Website ist offline';
+            const statusColor = isOnline ? '#28a745' : '#dc3545';
+            const lastCheck = status.timestamp ? new Date(status.timestamp).toLocaleString('de-DE') : '-';
+            const uptime = status.uptime || { uptime: '-', totalChecks: '-', onlineChecks: '-' };
+            const errorMessage = status.error ? `<div style="color: #dc3545; margin-top: 10px;">Fehler: ${status.error}</div>` : '';
+
+            return `
+                <div class="${cardClass}">
+                    <h3>
+                        <span class="${indicatorClass}"></span>
+                        <span style="color: ${statusColor};">${statusText}</span>
+                    </h3>
+                    <p><strong>URL:</strong> <a class="url" href="${status.url}" target="_blank">${status.url}</a></p>
+                    <p><strong>Status Code:</strong> <span>${status.statusCode || '-'}</span></p>
+                    <p><strong>Antwortzeit:</strong> <span>${status.responseTime || '-'}</span> ms</p>
+                    <p><strong>Letzte Überprüfung:</strong> <span>${lastCheck}</span></p>
+                    ${errorMessage}
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value">${uptime.uptime}%</div>
+                            <div class="metric-label">Verfügbarkeit</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">${uptime.totalChecks}</div>
+                            <div class="metric-label">Gesamte Überprüfungen</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">${uptime.onlineChecks}</div>
+                            <div class="metric-label">Online Überprüfungen</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
         async function loadStatus() {
             try {
                 const response = await fetch('status.json');
-                const status = await response.json();
-                
-                // Update status card
-                const statusCard = document.getElementById('status-card');
-                const statusIndicator = document.getElementById('status-indicator');
-                const statusText = document.getElementById('status-text');
-                
-                if (status.status === 'online') {
-                    statusCard.classList.remove('offline');
-                    statusIndicator.classList.remove('offline');
-                    statusText.textContent = 'Website ist online';
-                    statusText.style.color = '#28a745';
-                } else {
-                    statusCard.classList.add('offline');
-                    statusIndicator.classList.add('offline');
-                    statusText.textContent = 'Website ist offline';
-                    statusText.style.color = '#dc3545';
-                }
-                
-                // Update details
-                document.getElementById('website-url').href = status.url;
-                document.getElementById('website-url').textContent = status.url;
-                document.getElementById('status-code').textContent = status.statusCode || '-';
-                document.getElementById('response-time').textContent = status.responseTime || '-';
-                document.getElementById('last-check').textContent = new Date(status.timestamp).toLocaleString('de-DE');
-                
-                // Show error message if exists
-                const errorElement = document.getElementById('error-message');
-                if (status.error) {
-                    errorElement.textContent = 'Fehler: ' + status.error;
-                    errorElement.style.display = 'block';
-                } else {
-                    errorElement.style.display = 'none';
-                }
-                
-                // Update metrics
-                document.getElementById('uptime-percentage').textContent = status.uptime.uptime + '%';
-                document.getElementById('total-checks').textContent = status.uptime.totalChecks;
-                document.getElementById('online-checks').textContent = status.uptime.onlineChecks;
+                const data = await response.json();
+                const statuses = Array.isArray(data) ? data : [data];
+
+                const container = document.getElementById('status-container');
+                container.innerHTML = statuses.map(renderStatusCard).join('');
                 
             } catch (error) {
                 console.error('Fehler beim Laden der Statusdaten:', error);
-                document.getElementById('status-text').textContent = 'Fehler beim Laden der Daten';
-                document.getElementById('status-text').style.color = '#dc3545';
+                const container = document.getElementById('status-container');
+                container.innerHTML = '<div class="status-card offline"><h3 style="color:#dc3545;">Fehler beim Laden der Daten</h3></div>';
             }
         }
 
