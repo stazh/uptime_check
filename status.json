@@ -1,10 +1,10 @@
 {
   "url": "https://www.zentraleserien-hybridesuche.zh.ch",
-  "timestamp": "2026-01-20T12:22:45.106774+00:00",
-  "status": "online",
-  "responseTime": 832,
-  "statusCode": 200,
-  "error": null,
+  "timestamp": "2026-01-20T14:20:36.709111+00:00",
+  "status": "offline",
+  "responseTime": 15023,
+  "statusCode": 0,
+  "error": "HTTPSConnectionPool(host='www.zentraleserien-hybridesuche.zh.ch', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.zentraleserien-hybridesuche.zh.ch', port=443): Failed to resolve 'www.zentraleserien-hybridesuche.zh.ch' ([Errno -3] Temporary failure in name resolution)\"))",
   "uptime": {
     "uptime": "99.40",
     "totalChecks": 1000,
