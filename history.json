@@ -1,32 +1,6 @@
 [
   {
     "url": "https://www.zentraleserien-hybridesuche.zh.ch",
-    "timestamp": "2025-12-02T10:11:46.930427+00:00",
-    "status": "online",
-    "responseTime": 977,
-    "statusCode": 200,
-    "error": null,
-    "uptime": {
-      "uptime": "100.00",
-      "totalChecks": 1000,
-      "onlineChecks": 1000
-    }
-  },
-  {
-    "url": "https://www.zentraleserien-hybridesuche.zh.ch",
-    "timestamp": "2025-12-02T12:20:36.905566+00:00",
-    "status": "online",
-    "responseTime": 441,
-    "statusCode": 200,
-    "error": null,
-    "uptime": {
-      "uptime": "100.00",
-      "totalChecks": 1000,
-      "onlineChecks": 1000
-    }
-  },
-  {
-    "url": "https://www.zentraleserien-hybridesuche.zh.ch",
     "timestamp": "2025-12-02T14:11:56.993125+00:00",
     "status": "online",
     "responseTime": 661,
@@ -12316,6 +12290,22 @@
     "timestamp": "2026-02-19T14:39:54.500772+00:00",
     "status": "online",
     "responseTime": 2085,
+    "statusCode": 200,
+    "error": null
+  },
+  {
+    "url": "https://www.zentraleserien-hybridesuche.zh.ch",
+    "timestamp": "2026-02-19T16:37:47.761457+00:00",
+    "status": "online",
+    "responseTime": 550,
+    "statusCode": 200,
+    "error": null
+  },
+  {
+    "url": "https://www.zentraleserien.zh.ch/documents/abl/ABl_1966__S__568-589_?norm=on",
+    "timestamp": "2026-02-19T16:37:48.312481+00:00",
+    "status": "online",
+    "responseTime": 2542,
     "statusCode": 200,
     "error": null
   }
