@@ -103,6 +103,8 @@
             const lastCheck = status.timestamp ? new Date(status.timestamp).toLocaleString('de-DE') : '-';
             const uptime = status.uptime || { uptime: '-', totalChecks: '-', onlineChecks: '-' };
             const errorMessage = status.error ? `<div style="color: #dc3545; margin-top: 10px;">Fehler: ${status.error}</div>` : '';
+            const details = status.message ? `<p><strong>Hinweis:</strong> <span>${status.message}</span></p>` : '';
+            const attemptInfo = status.attemptCount ? `<p><strong>Versuche:</strong> <span>${status.attemptCount}</span></p>` : '';
 
             return `
                 <div class="${cardClass}">
@@ -113,7 +115,9 @@
                     <p><strong>URL:</strong> <a class="url" href="${status.url}" target="_blank">${status.url}</a></p>
                     <p><strong>Status Code:</strong> <span>${status.statusCode || '-'}</span></p>
                     <p><strong>Antwortzeit:</strong> <span>${status.responseTime || '-'}</span> ms</p>
+                    ${attemptInfo}
                     <p><strong>Letzte Überprüfung:</strong> <span>${lastCheck}</span></p>
+                    ${details}
                     ${errorMessage}
                     <div class="metrics">
                         <div class="metric">
