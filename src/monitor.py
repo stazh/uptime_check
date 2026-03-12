@@ -16,6 +16,9 @@ URLS_TO_CHECK = [
     'https://www.zentraleserien-hybridesuche.zh.ch',
     'https://www.zentraleserien.zh.ch/documents/abl/ABl_1966__S__568-589_?norm=on',
 ]
+URLS_IGNORE_403 = {
+    'https://www.zentraleserien.zh.ch/documents/abl/ABl_1966__S__568-589_?norm=on'
+}
 STATUS_FILE = os.path.join(os.path.dirname(__file__), '..', 'status.json')
 HISTORY_FILE = os.path.join(os.path.dirname(__file__), '..', 'history.json')
 REQUEST_HEADERS = {'User-Agent': 'Uptime-Monitor/1.0.0'}
@@ -57,10 +60,12 @@ def _finalize_status(status, final_status, attempt_count, confirmed_failure, mes
     return status
 
 
-def _classify_http_status(status_code):
+def _classify_http_status(status_code, url=None):
     if 200 <= status_code < 300:
         return 'online', 'none'
     if status_code == 403:
+        if url in URLS_IGNORE_403:
+            return 'online', 'none'
         return 'retryable', '403'
     return 'offline', 'http_status'
 
@@ -103,7 +108,7 @@ def single_check(url, request_get=requests.get):
             headers=REQUEST_HEADERS,
         )
         response_time = int((time.time() - start_time) * 1000)
-        classification, failure_type = _classify_http_status(response.status_code)
+        classification, failure_type = _classify_http_status(response.status_code, url=url)
         status.update({
             'responseTime': response_time,
             'statusCode': response.status_code,
