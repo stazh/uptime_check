@@ -99,6 +99,24 @@ class MonitorTests(unittest.TestCase):
         self.assertEqual(sleep_calls, [900, 900])
         issue_mock.assert_called_once_with(status)
 
+    def test_403_is_online_for_zentrale_serien_urls(self):
+        for url in monitor.URLS_IGNORE_403:
+            with self.subTest(url=url):
+                sleep_calls = []
+
+                with patch.object(monitor, '_maybe_create_issue') as issue_mock:
+                    status = monitor.check_url(
+                        url,
+                        sleep_fn=sleep_calls.append,
+                        request_get=sequence_request([Response(403)]),
+                    )
+
+                self.assertEqual(status['status'], 'online')
+                self.assertEqual(status['attemptCount'], 1)
+                self.assertFalse(status['confirmedFailure'])
+                self.assertEqual(sleep_calls, [])
+                issue_mock.assert_not_called()
+
     def test_transport_error_recovers_on_third_attempt(self):
         sleep_calls = []
 
