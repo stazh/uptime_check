@@ -1,25 +1,25 @@
 [
   {
     "url": "https://www.zentraleserien-hybridesuche.zh.ch",
-    "timestamp": "2026-04-08T06:17:40.027845+00:00",
+    "timestamp": "2026-04-08T08:39:47.096224+00:00",
     "status": "online",
-    "responseTime": 550,
+    "responseTime": 588,
     "statusCode": 200,
     "error": null,
-    "attemptCount": 1,
+    "attemptCount": 3,
     "confirmedFailure": false,
-    "message": null,
+    "message": "Recovered on retry after 30 minutes",
     "uptime": {
-      "uptime": "99.75",
-      "totalChecks": 1177,
-      "onlineChecks": 1174
+      "uptime": "99.74",
+      "totalChecks": 1176,
+      "onlineChecks": 1173
     }
   },
   {
     "url": "https://www.zentraleserien.zh.ch/documents/abl/ABl_1966__S__568-589_?norm=on",
-    "timestamp": "2026-04-08T06:17:40.578684+00:00",
+    "timestamp": "2026-04-08T08:39:47.685824+00:00",
     "status": "online",
-    "responseTime": 1587,
+    "responseTime": 2199,
     "statusCode": 200,
     "error": null,
     "attemptCount": 1,
@@ -27,8 +27,8 @@
     "message": null,
     "uptime": {
       "uptime": "98.06",
-      "totalChecks": 823,
-      "onlineChecks": 807
+      "totalChecks": 824,
+      "onlineChecks": 808
     }
   }
 ]
