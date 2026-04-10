@@ -1,32 +1,6 @@
 [
   {
     "url": "https://www.zentraleserien-hybridesuche.zh.ch",
-    "timestamp": "2026-01-20T14:20:36.709111+00:00",
-    "status": "offline",
-    "responseTime": 15023,
-    "statusCode": 0,
-    "error": "HTTPSConnectionPool(host='www.zentraleserien-hybridesuche.zh.ch', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.zentraleserien-hybridesuche.zh.ch', port=443): Failed to resolve 'www.zentraleserien-hybridesuche.zh.ch' ([Errno -3] Temporary failure in name resolution)\"))",
-    "uptime": {
-      "uptime": "99.40",
-      "totalChecks": 1000,
-      "onlineChecks": 994
-    }
-  },
-  {
-    "url": "https://www.zentraleserien-hybridesuche.zh.ch",
-    "timestamp": "2026-01-20T16:20:29.912687+00:00",
-    "status": "online",
-    "responseTime": 638,
-    "statusCode": 200,
-    "error": null,
-    "uptime": {
-      "uptime": "99.30",
-      "totalChecks": 1000,
-      "onlineChecks": 993
-    }
-  },
-  {
-    "url": "https://www.zentraleserien-hybridesuche.zh.ch",
     "timestamp": "2026-01-20T18:19:27.779256+00:00",
     "status": "online",
     "responseTime": 685,
@@ -20765,6 +20739,28 @@
     "timestamp": "2026-04-10T19:38:39.131487+00:00",
     "status": "online",
     "responseTime": 5044,
+    "statusCode": 200,
+    "error": null,
+    "attemptCount": 1,
+    "confirmedFailure": false,
+    "message": null
+  },
+  {
+    "url": "https://www.zentraleserien-hybridesuche.zh.ch",
+    "timestamp": "2026-04-10T20:27:31.285896+00:00",
+    "status": "online",
+    "responseTime": 904,
+    "statusCode": 200,
+    "error": null,
+    "attemptCount": 1,
+    "confirmedFailure": false,
+    "message": null
+  },
+  {
+    "url": "https://www.zentraleserien.zh.ch/documents/abl/ABl_1966__S__568-589_?norm=on",
+    "timestamp": "2026-04-10T20:27:32.191081+00:00",
+    "status": "online",
+    "responseTime": 2382,
     "statusCode": 200,
     "error": null,
     "attemptCount": 1,
