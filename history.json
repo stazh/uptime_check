@@ -1,22 +1,6 @@
 [
   {
     "url": "https://www.zentraleserien-hybridesuche.zh.ch",
-    "timestamp": "2026-03-10T03:57:18.149643+00:00",
-    "status": "online",
-    "responseTime": 577,
-    "statusCode": 200,
-    "error": null
-  },
-  {
-    "url": "https://www.zentraleserien.zh.ch/documents/abl/ABl_1966__S__568-589_?norm=on",
-    "timestamp": "2026-03-10T03:57:54.129439+00:00",
-    "status": "offline",
-    "responseTime": 30032,
-    "statusCode": 0,
-    "error": "HTTPSConnectionPool(host='www.zentraleserien.zh.ch', port=443): Max retries exceeded with url: /documents/abl/ABl_1966__S__568-589_?norm=on (Caused by NewConnectionError(\"HTTPSConnection(host='www.zentraleserien.zh.ch', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable\"))"
-  },
-  {
-    "url": "https://www.zentraleserien-hybridesuche.zh.ch",
     "timestamp": "2026-03-10T05:06:34.130559+00:00",
     "status": "online",
     "responseTime": 658,
@@ -21879,6 +21863,28 @@
     "timestamp": "2026-05-08T09:08:28.570662+00:00",
     "status": "online",
     "responseTime": 3241,
+    "statusCode": 200,
+    "error": null,
+    "attemptCount": 1,
+    "confirmedFailure": false,
+    "message": null
+  },
+  {
+    "url": "https://www.zentraleserien-hybridesuche.zh.ch",
+    "timestamp": "2026-05-08T11:05:36.355315+00:00",
+    "status": "online",
+    "responseTime": 738,
+    "statusCode": 200,
+    "error": null,
+    "attemptCount": 1,
+    "confirmedFailure": false,
+    "message": null
+  },
+  {
+    "url": "https://www.zentraleserien.zh.ch/documents/abl/ABl_1966__S__568-589_?norm=on",
+    "timestamp": "2026-05-08T11:05:37.094970+00:00",
+    "status": "online",
+    "responseTime": 1881,
     "statusCode": 200,
     "error": null,
     "attemptCount": 1,
