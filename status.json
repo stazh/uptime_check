@@ -1,9 +1,9 @@
 [
   {
     "url": "https://www.zentraleserien-hybridesuche.zh.ch",
-    "timestamp": "2026-08-21T18:25:11.184669+00:00",
+    "timestamp": "2026-08-21T19:19:49.135397+00:00",
     "status": "online",
-    "responseTime": 725,
+    "responseTime": 835,
     "statusCode": 200,
     "error": null,
     "attemptCount": 1,
@@ -17,9 +17,9 @@
   },
   {
     "url": "https://www.zentraleserien.zh.ch/documents/abl/ABl_1966__S__568-589_?norm=on",
-    "timestamp": "2026-08-21T18:25:11.910464+00:00",
+    "timestamp": "2026-08-21T19:19:49.971961+00:00",
     "status": "online",
-    "responseTime": 2219,
+    "responseTime": 2517,
     "statusCode": 200,
     "error": null,
     "attemptCount": 1,
